@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url(/img/wallpaper.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+body::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url(/img/wallpaper_signup.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+body.signup::after{
+    opacity: 1;
+}
+
+.container{
+    position: relative;
+    width: 350px;
+    height: 340px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+body.signup .container{
+    height: 440px;
+}
+
+.container::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from var(--a), #E89802 0%,
+     #E89802 10%, transparent 10%, transparent 80%, #E89802 100%);
+    border-radius: 20px;
+    animation: animate 3.5s linear infinite;
+}
+
+body.signup .container::before{
+    filter: hue-rotate(140deg);
+}
+
+@property --a{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes animate{
+    0%{
+        --a: 0deg
+    }
+    100%{
+        --a: 360deg
+    }
+}
+
+.container span{
+    position: absolute;
+    inset: 5px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.container span::before{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background: url(/img/wallpaper.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+}
+
+.container span::after{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background: url(/img/wallpaper.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px);
+}
+
+body.signup .container span::before,
+body.signup .container span::after{
+    background: url(/img/wallpaper_signup.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px);
+}
+
+form{
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    transition: 0.5s;
+}
+
+form#signupForm{
+    left: 100%;
+}
+
+body.signup form#signinForm{
+    left: -100%;
+}
+
+body.signup form#signupForm{
+    left: 0%;
+}
+
+form h2{
+    position: relative;
+    color: #fff;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+form .inputBox{
+    position: relative;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+form .inputBox a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85em;
+}
+
+form .inputBox a:nth-child(2){
+    text-decoration: underline;
+}
+
+form .inputBox input{
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, .25);
+    background: rgba(0, 0, 0, .15);
+    padding: 6px 15px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    color: #fff;
+}
+
+form.inputBox input::placeholder{
+    color: rgba(255, 255, 255, 0.9);
+}
+
+form .inputBox input[type="submit"]{
+    background: fixed#2196f3;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+/* Estilos para Modal Terminos y Condiciones */
+
+body.modal-window{
+    overflow: hidden;
+  }
+
+.modal-window{
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.25);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.modal-window:target{
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.modal-container{
+    max-width: 500px;
+    max-height: 90vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btnLogin{
+    width: 250px;
+    height: 30px;
+    border: none;
+    color: white;
+    background: #2196f3;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+.btnLogin:hover {
+    background-color: #2144f3;
+    color: white;
+}
+
+@media (max-width: 600px){
+    .modal-container{
+        width: 90%;
+    }
+}
+
+.modal-container-header{
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-container-title{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1;
+    font-weight: 700;
+    font-size: 1.125;
+}
+
+.modal-container-body{
+    padding: 24px 32px 51px;
+    overflow-y: auto;
+}
+
+.modal-container-footer{
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-top: 1px solid #ddd;
+    gap: 12px;
+    position: relative;
+}
+
+.button{
+    padding: 13px 20px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s ease;
+    font: inherit;
+}
+
+.button.is-primary{
+    background-color: #007272;
+    color: #fff;
+}
+
+.button.is-primary:hover, .button.is-primary:focus{
+    background-color: #001B48;
+}
+
+.button.is-ghost:hover, .button.is-ghost:focus{
+    background-color: #dfdad7;
+}
+
+.icon-button{
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.15s ease;
+}
+
+.icon-button:hover, .icon-button:focus{
+    background-color: #dfdad7;
+}
+
+.modal-container-footer:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -50px;
+    left: 24px;
+    right: 24px;
+    height: 50px;
+    flex-shrink: 0;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.75), transparent);
+    pointer-events: none;
+}
+
+*::-webkit-scrollbar{
+    background-color: transparent;
+    width: 12px;
+}
+
+*::-webkit-scrollbar-thumb{
+    border-radius: 99px;
+    background-color: #ddd;
+    border: 4px solid #fff;
+
+}

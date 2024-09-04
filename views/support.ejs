@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <%- include('partials/linkCss.ejs') %>
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte</title>
+</head>
+<body>
+
+    <%- include('partials/header.ejs')%>
+    <div class="container">
+        <div class="row row-cols-lg-auto g-3 align-items-center">
+            
+                <h2>Usuarios Registrados</h2>
+            
+            <div class="col col-lg-2">
+                <button type="button" class="btn btn-primary" onclick="userList()">Buscar</button>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="">
+            <div id="gridUsers"></div>
+        </div>
+        <%- include('partials/footer.ejs')%> 
+    </div>
+
+</body>
+<script src="/js/notiflix-Notiflix-78ca6fa/dist/notiflix-aio-3.2.7.min.js"></script>
+<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+<script src="/js/support.js"></script>
+<script src="/js/logout.js"></script>
+</html>

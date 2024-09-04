@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/linkCss.ejs') %>
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte</title>
+</head>
+<body>
+    <%- include('partials/header.ejs')%>
+    <div class="container">
+        <div class="row row-cols-lg-auto g-3 align-items-center">
+            <div class="col-12">
+                <div class="input-group">
+                  <input type="date" class="form-control" id="dateStart" placeholder="Username">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="input-group">
+                  <input type="date" class="form-control" id="dateEnd" placeholder="Username">
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="button" class="btn btn-primary" onclick="findReport()">Buscar</button>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-success" onclick="exportReport()">Exportar</button>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="">
+            <div id="gridReport"></div>
+        </div>
+        <%- include('partials/footer.ejs')%> 
+    </div> 
+</body>
+<script src="/js/notiflix-Notiflix-78ca6fa/dist/notiflix-aio-3.2.7.min.js"></script>
+<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+<script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+<script src="/js/reportFile.js"></script>
+<script src="/js/logout.js"></script>
+</html>

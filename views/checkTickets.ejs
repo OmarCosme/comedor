@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/linkCss.ejs') %>
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Tickets</title>
+</head>
+<body>
+    <header>
+        <div class="px-3 py-2 text-bg-dark border-bottom">
+            <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                <img src="/img/copamex_blanco.png" width="60" height="55" class="me-2" viewBox="0 0 118 94">
+                <span class="fs-4">Servicio de Comedor</span>
+                </a>
+            </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="col-sm-12">
+            <h4 class="mb-3">Revisa tus tickets de consumo del comedor</h4>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="row gutters">
+                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="checkPayrollNumber" placeholder="Número de Nomina">
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <input type="date" class="form-control" id="checkDateStart" placeholder="Fecha Inicio">
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <input type="date" class="form-control" id="checkDateEnd" placeholder="Fecha Fin">
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <button class="btn btn-success" onclick="seachTickets()">Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="">
+            <div id="gridTickets"></div>
+        </div>
+    </div>
+</body>
+<script src="/js/notiflix-Notiflix-78ca6fa/dist/notiflix-aio-3.2.7.min.js"></script>
+<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+<script src="/js/checkTickest.js"></script>
+</html>

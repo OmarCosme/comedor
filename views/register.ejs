@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <%- include('partials/linkCss.ejs') %>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/styleSheetRegister.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <%- include('partials/header.ejs')%>
+    <div class="container">
+        <main>
+            <div class="row g-5">
+                <div class="col-md-5 col-lg-4 order-md-last">
+                    <h4 class="mb-3">Foto del Empleado</h4>
+                    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                        <form action="/upload" class="dropzone" id="imgEmployee"></form>
+                    </div>
+                </div>
+
+                <div class="col-md-7 col-lg-8">
+                    <h4 class="mb-3">Datos del Empleado</h4>
+                    
+                    <div class="row g-3">
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">Primer Nombre</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                        Nombre es requerido.
+                        </div>
+                    </div>
+        
+                    <div class="col-sm-6">
+                        <label for="secondName" class="form-label">Segundo Nombre</label>
+                        <input type="text" class="form-control" id="secondName" placeholder="" value="">
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">Apellido Paterno</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                            Apellido paterno es requerido.
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">Apellido Materno</label>
+                        <input type="text" class="form-control" id="maternalName" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                            Apellido materno es requerido.
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">N° de Nomina</label>
+                        <input type="text" class="form-control" id="payrollNumber" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                            Numero de nomina es requerido.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">Area</label>
+                        <input type="text" class="form-control" id="area" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                            Area del trabajador es requerido.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">Puesto</label>
+                        <input type="text" class="form-control" id="position" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                            Puesto del trabajador es requerido.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">Centro de Costos</label>
+                        <input type="text" class="form-control" id="costCenters" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                            Centro de costos es requerido.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="state" class="form-label">Pago</label>
+                        <select class="form-select" id="paymentMethod" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Semanal">Semanal</option>
+                            <option value="Catorcena">Catorcena</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Forma de pago es requerido.
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <button class="w-100 btn btn-primary btn-lg" onclick="registerEmployee()">Guardar Información</button>
+
+                  </div>
+            </div>
+        </main> 
+        <%- include('partials/footer.ejs')%>   
+    </div>
+</body>
+<script src="/js/notiflix-Notiflix-78ca6fa/dist/notiflix-aio-3.2.7.min.js"></script>
+<script src="/js/popupMessage.js"></script>
+<script src="/js/registerEmployee.js"></script>
+<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+<script src="/js/logout.js"></script>
+</html>

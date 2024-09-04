@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/styleSheetLogin.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+</head>
+<body>
+    <div class="container">
+        <span></span>
+        <span></span>
+        <span></span>
+        <form id="signinForm">
+            <h2>Inicio</h2>
+            <div class="inputBox">
+                <input type="text" placeholder="Usuario" id="userName">
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Contraseña" id="userPassword">
+            </div>
+            <div class="inputBox group">
+                <a href="/forgetPass">Olvidaste Contraseña</a>
+                <a href="#" id="signup">Registrate</a>
+            </div>
+            <div class="inputBox">
+                <button class="btnLogin" type="button" id="inputLogin">Ingresar</button>
+            </div>
+        </form>
+
+        <form id="signupForm">
+            <h2>Registro</h2>
+            <div class="inputBox">
+                <input type="text" placeholder="Usuario" id="userNameReg">
+            </div>
+            <div class="inputBox">
+                <input type="email" placeholder="Correo" id="userEmailReg">
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Crear Contraseña" id="userPasswordReg">
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Confirma Contraseña" id="userPassConfirmReg">
+            </div>
+            <div class="inputBox group">
+                <a href="#open-modal">Terminos y Condiciones</a>
+            </div>
+            <div class="inputBox">
+                <input id="inputCreateAccount" type="submit" value="Registra Cuenta">
+            </div>
+            <div class="inputBox group">
+                <a href="#"> Ya tienes una cuenta? <b id="signin">Inicia Sesión</b></a>
+            </div>
+        </form>
+    </div>
+    <%- include('partials/termsConditions.ejs')%>
+</body>
+    <script src="/js/notiflix-Notiflix-78ca6fa/dist/notiflix-aio-3.2.7.min.js"></script>
+    <script src="/js/popupMessage.js"></script>
+    <script src="/js/login.js"></script>
+</html>

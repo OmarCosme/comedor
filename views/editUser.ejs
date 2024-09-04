@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <%- include('partials/linkCss.ejs') %>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/styleSheetRegister.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+</head>
+<body>
+    <%- include('partials/header.ejs')%>
+    <div class="container">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card-body">
+                <h4 class="mb-3">Numero de Nomina</h4>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="payrollNumber">
+                    <button class="btn btn-outline-secondary" onclick="seachPayrollNum()">Buscar</button>
+                </div>
+            </div>
+        </div>
+        <main>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="mb-2 text-primary">Información del Empleado</h6>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Nombre</label>
+                                    <input type="text" class="form-control" id="uNameUpdate">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Segundo Nombre</label>
+                                    <input type="text" class="form-control" id="uSecondName">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Apellido Paterno</label>
+                                    <input type="text" class="form-control" id="uLastName">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Apellido Materno</label>
+                                    <input type="text" class="form-control" id="uMaternalName">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="mt-3 mb-2 text-primary">Detalles de Pago</h6>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Area</label>
+                                    <input type="text" class="form-control" id="uArea">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Puesto</label>
+                                    <input type="text" class="form-control" id="uPosition">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Centro de Costos</label>
+                                    <input type="text" class="form-control" id="uCostCenters">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="form-label">Pago</label>
+                                <select class="form-select" id="uPaymentMethod" required>
+                                    <option value="">Seleccione...</option>
+                                    <option value="Semanal">Semanal</option>
+                                    <option value="Catorcena">Catorcena</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Forma de pago es requerido.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+
+            <div class="d-flex justify-content-center">
+                <div class="col-sm-12 d-grid gap-3">
+                    <button type="button" id="submit" class="btn btn-secondary" onclick="emptyForm()">Cancelar</button>
+                    <button type="button" id="submit" class="btn btn-primary" onclick="updateDataUser()">Actualizar</button> 
+                </div>
+            </div>
+        </main>
+        <%- include('partials/footer.ejs')%> 
+    </div>
+</body>
+    <script src="/js/notiflix-Notiflix-78ca6fa/dist/notiflix-aio-3.2.7.min.js"></script>
+    <script src="/js/popupMessage.js"></script>
+    <script src="/js/editUser.js"></script>
+    <script src="/js/logout.js"></script>
+</html>
